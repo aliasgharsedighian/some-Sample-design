@@ -1,0 +1,80 @@
+.navbar-container {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+}
+.navbar {
+  background-color: #fffcf8;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+}
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3%;
+  cursor: pointer;
+}
+.navbar-link-area {
+  display: flex;
+  align-items: center;
+}
+.navbar-link-area a {
+  color: #14203e;
+  font-size: 13px;
+  padding-right: 15px;
+}
+.navbar-link-area a:active {
+  scale: 1.1;
+  transition: ease-in ease-out;
+  transition-duration: 2s;
+}
+.login-area {
+  display: flex;
+  align-items: center;
+  margin-right: 3%;
+}
+.login-area .login-button {
+  background-color: #f6f0e8;
+  margin-right: 10px;
+  width: 60px;
+  height: 30px;
+  border-radius: 8px;
+}
+.login-area .free-button {
+  background-color: #14203e;
+  width: 110px;
+  height: 30px;
+  color: white;
+  border-radius: 8px;
+}
+.free-button:active {
+  scale: 1.03;
+  transition: 0.1s;
+}
+.login-button:active {
+  scale: 1.03;
+  transition: 0.1s;
+}
+@media (width > 576px) {
+  .login-area .free-button {
+    width: 126px;
+    height: 35px;
+  }
+  .login-area .login-button {
+    width: 78px;
+    height: 35px;
+  }
+}
+@media (width > 800px) {
+  .navbar-link-area a {
+    font-size: 18px;
+    padding-right: 30px;
+  }
+}
+@media (width <576px) {
+  .free-button {
+    display: none;
+  }
+}

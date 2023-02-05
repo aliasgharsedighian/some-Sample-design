@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+  padding: 8px;
+  font-size: small;
+  background-color: #facc15;
+  border-color: rgb(253 224 71);
+  border-radius: 5px;
+}
+.button:focus {
+  outline: none;
+}
+.button:active {
+  background-color: #eab308;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.input {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 5px 5px;
 }
+.input:active {
+  border: 1px solid #eab308;
+}
+/* 
+@layer components {
+  .button {
+    @apply;
+  }
+} */

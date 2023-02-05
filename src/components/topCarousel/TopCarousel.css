@@ -1,0 +1,34 @@
+.top-carousel {
+  position: relative;
+}
+.top-carousel2 {
+  z-index: 30;
+  position: absolute;
+  width: 100%;
+  height: 150px;
+}
+.carousel img {
+  object-fit: cover;
+  height: 100vh;
+}
+.bg-img1 h2 {
+  font-family: Kaushan;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  top: center;
+  right: 10px;
+  position: absolute;
+}
+.bg-img2 h2 {
+  text-align: center;
+  top: 180px;
+  /* right: 180px; */
+  position: absolute;
+}
+.bg-img3 h2 {
+  text-align: center;
+  top: 180px;
+  /* right: 180px; */
+  position: absolute;
+}

@@ -1,0 +1,89 @@
+.banner-section {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0.2, 0.2), #250029);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}
+.banner-img {
+  z-index: 30;
+  position: absolute;
+  width: 140px;
+  left: 30px;
+  top: 30px;
+  border-radius: 20px;
+  opacity: 0.5;
+}
+.banner-text {
+  text-align: center;
+  color: white;
+  padding-top: 180px;
+}
+.banner-text h1 {
+  font-size: 130px;
+  font-family: Kaushan;
+}
+.banner-text p {
+  font-size: 20px;
+  font-style: italic;
+  font-family: Poppins-italic;
+}
+
+.banner-btn {
+  margin: 20px auto;
+}
+.banner-btn a {
+  margin: 10px;
+  padding: 10px 25px;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: inline-block;
+  font-family: Poppins-italic;
+}
+.banner-btn a:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3));
+  color: white;
+  transition: 0.3s ease-in-out;
+  transform: translate(0px, 0px) scale(1.05);
+}
+.banner-menu {
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #250029;
+  z-index: 30;
+  transition: all 1s ease-in-out;
+}
+.banner-menu nav a {
+  color: white;
+  margin: 30px auto;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Kaushan;
+}
+.banner-menu nav a:hover {
+  transform: scale(1.1);
+}
+.menu-btn {
+  transition: 0.5s ease-in-out;
+}
+.menu-btn img {
+  z-index: 30;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (width < 700px) {
+  .banner-text h1 {
+    font-size: 90px;
+  }
+} ;

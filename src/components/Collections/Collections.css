@@ -1,0 +1,137 @@
+.collections-container {
+  position: relative;
+  background-color: #d8d6d6;
+  padding: 150px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collections {
+  background: linear-gradient(rgb(245, 246, 248), rgb(218, 214, 214));
+  padding: 44px;
+  border-radius: 20px;
+  z-index: 2;
+}
+.collection-title {
+  margin-bottom: 40px;
+}
+.title {
+  margin-bottom: 17px;
+}
+.title h3 {
+  color: #0e0e38;
+  font-weight: bolder;
+}
+.collection-tag a {
+  background-color: #fff;
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-size: 11.5px;
+  border-radius: 6px;
+  color: #0e0e38;
+}
+.popular-image-container {
+  display: grid;
+}
+.popular-images {
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 17px;
+  width: 306px;
+  height: 343px;
+  margin-right: 45px;
+  margin-bottom: 45px;
+}
+.img-area {
+  display: flex;
+  flex-direction: column;
+}
+.large-img {
+  margin-bottom: 10px;
+  width: 273px;
+  height: 188px;
+}
+.small-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 17px;
+  width: 84px;
+  height: 68px;
+}
+.small-img img {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 9px;
+}
+.tag {
+  display: flex;
+  justify-content: space-between;
+}
+.tag span {
+  font-size: 17px;
+  color: #0e0e38;
+}
+.view-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.view-count img {
+  width: 22px;
+}
+.view-count p {
+  font-size: 11.5px;
+  color: #0e0e38;
+}
+.circle-top {
+  background-color: #e5e7f0;
+  width: 217px;
+  height: 205px;
+  position: absolute;
+  right: 15%;
+  top: 7%;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.5;
+}
+.circle-bottom {
+  background-color: #e5e7f0;
+  width: 217px;
+  height: 205px;
+  position: absolute;
+  left: 15%;
+  bottom: 7%;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* media Query */
+@media screen and (width<=920px) {
+  .popular-image-container {
+    grid-template-columns: 1fr;
+  }
+  .circle-bottom,
+  .circle-top {
+    display: none;
+  }
+}
+@media screen and (920px<width<=1320px) {
+  .popular-image-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .circle-bottom,
+  .circle-top {
+    display: none;
+  }
+}
+@media screen and (width>1320px) {
+  .popular-image-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

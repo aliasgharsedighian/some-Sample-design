@@ -1,0 +1,118 @@
+.footer {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 2fr; */
+  width: 100%;
+  background-color: #1e2641;
+  border-radius: 5px 5px 0px 0px;
+  padding: 40px 80px;
+  color: #ffffff;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+}
+.info h3 {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+.info a {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.resources {
+  display: flex;
+  flex-direction: column;
+}
+.resources h3 {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+.resources a {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.company {
+  display: flex;
+  flex-direction: column;
+}
+.company h3 {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+.company a {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.social-img {
+  display: flex;
+}
+.sub-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+.sub-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub-input input {
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  width: 250px;
+  height: 36px;
+  background-color: #1e2641;
+  border: 1px solid #3a456a;
+}
+.sub-input button {
+  background-color: #f1f2fc;
+  color: #1e2641;
+  width: 92px;
+  height: 36px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.subscribe {
+  margin-bottom: 30px;
+}
+.subscribe p {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.social p {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.social-img img {
+  cursor: pointer;
+  margin-right: 7px;
+  width: 40px;
+  border-radius: 5px;
+}
+@media screen and (width<= 950px) {
+  .sub-input input {
+    width: 150px;
+  }
+}
+@media screen and (width<= 576px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (576px<width<= 768px) {
+  .footer {
+    grid-template-columns: 2fr 2fr;
+  }
+}
+@media screen and (768px<width) {
+  .footer {
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+  }
+}

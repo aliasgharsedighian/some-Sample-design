@@ -1,0 +1,119 @@
+.sample-container {
+  margin: 20px 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sample-container h5 {
+  text-align: center;
+}
+.sample-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sample-title h5 {
+  font-size: 12px;
+}
+.sample-title span {
+  background-color: #14203e;
+  opacity: 0.2;
+  margin: 0 20px;
+  border-radius: 50px;
+}
+.samples {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.sample-area {
+  width: 280px;
+  height: 340px;
+  padding: 3px 3px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 3px 0px rgba(19, 43, 80, 0.4);
+  margin: 15px 15px;
+  border-radius: 10px;
+}
+.sample-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sample-img img {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.sample-img img:hover {
+  transition: 0.5s ease-in-out;
+  scale: 1.03;
+}
+.sample-text {
+  display: flex;
+  flex-direction: column;
+}
+.sample-text p {
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #14203e;
+  cursor: pointer;
+}
+.sample-text span {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 10px;
+  color: #14203e;
+}
+
+/* {sm: 640px} */
+@media screen and (width<= 576px) {
+  .samples {
+    grid-template-columns: 1fr;
+  }
+  .sample-container {
+    margin: 0 20px;
+  }
+  .sample-title span {
+    padding: 1px 40px;
+  }
+}
+/* {md:768px} */
+@media screen and (576px<width<= 768px) {
+  .samples {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sample-container {
+    margin: 0 50px;
+  }
+  .sample-title span {
+    padding: 1px 50px;
+  }
+}
+/* {lg:1024px} */
+@media screen and (768px<width<= 1124px) {
+  .samples {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .sample-container {
+    margin: 0 80px;
+  }
+  .sample-title span {
+    padding: 1px 70px;
+  }
+}
+/* {xl:1280px} */
+@media screen and (width >= 1124px) {
+  .samples {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .sample-title span {
+    padding: 1px 80px;
+  }
+}
+/* {2xl:1536px} */

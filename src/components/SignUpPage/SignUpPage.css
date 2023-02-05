@@ -1,0 +1,98 @@
+.sign-up-section {
+  background-color: #f4f9ff;
+  padding: 100px 0;
+}
+.sign-up-effect {
+  background-color: #e8f1fd;
+  width: 490px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+.sign-up-container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px 100px;
+}
+.sign-up-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sign-up-info h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #1b1c40;
+}
+.sign-up-info p {
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #1b1c40;
+}
+.sign-up-info button {
+  font-size: 11px;
+  background-color: #4968ad;
+  width: 100%;
+  padding: 14px 0;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  color: #ffffff;
+}
+.sign-up-info span {
+  font-size: 11px;
+  color: #000;
+  opacity: 0.6;
+}
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.sign-up-form input {
+  border: 1px solid #c8d1e5;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.sign-up-name {
+  display: flex;
+  gap: 6px;
+}
+.sign-up-name input {
+  width: 100%;
+}
+.sign-up-city-country {
+  display: flex;
+  gap: 6px;
+}
+.sign-up-city-country input {
+  width: 100%;
+}
+.sign-up-pass-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sign-up-pass-btn input {
+  width: 100%;
+}
+.sign-up-pass-btn button {
+  background-color: #1e2c4b;
+  color: #fff;
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 7px;
+  font-size: 12px;
+}
+.sign-up-warn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #1e2c4b;
+  font-size: 10px;
+  padding: 0 20px;
+}

@@ -1,0 +1,109 @@
+.login {
+  display: flex;
+  justify-content: center;
+  height: 1200px;
+  background-color: rgba(19, 43, 80, 0.04);
+}
+.login-box {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  padding: 85px;
+  width: 410px;
+  height: 404px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px 0px rgba(19, 43, 80, 0.4);
+}
+.login-header-text {
+  font-size: 23px;
+  font-weight: bolder;
+  color: #132b50;
+  margin-bottom: 23px;
+}
+.login-user-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 23px;
+}
+.login-user-detail img {
+  width: 55px;
+  height: 55px;
+  margin-right: 12px;
+}
+.text-detail h6 {
+  font-size: 14px;
+  font-weight: bolder;
+  color: #132b50;
+}
+.text-detail p {
+  font-size: 10px;
+  color: #132b50;
+  font-weight: normal;
+}
+.user-login {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 23px;
+}
+.password-login {
+  display: flex;
+  flex-direction: column;
+}
+.password-login label {
+  color: #132b50;
+  font-size: 10px;
+  font-weight: bold;
+}
+.password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.password-container input {
+  margin-right: 11.5px;
+  height: 42px;
+  width: 290px;
+  padding: 0 32px;
+}
+.lock-password {
+  position: absolute;
+  left: 11.5px;
+}
+.password-container img {
+  width: 19px;
+  height: 19px;
+}
+.toggle-button {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 28px;
+  align-items: center;
+}
+.toggle-button p {
+  font-size: 11.5px;
+  font-weight: bold;
+  color: #132b50;
+  margin-left: 6.5px;
+}
+.toggle-button button {
+  width: 72px;
+  height: 36px;
+  background-color: #132b50;
+  padding: 6.5px;
+  border-radius: 6.5px;
+  color: white;
+  font-size: 11.5px;
+  font-weight: bold;
+}
+.toggle-button button:active {
+  scale: 1.04;
+}
+.reset-password {
+  text-decoration: underline;
+  color: #132b50;
+  font-size: 11.5px;
+  font-weight: bold;
+}
