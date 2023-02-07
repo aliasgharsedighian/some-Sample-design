@@ -8,6 +8,7 @@ import SampleDesign from "./components/SampleDesign/SampleDesign";
 import Collections from "./components/Collections/Collections";
 import UserList from "./components/UserList/UserList";
 import SignUpPage from "./components/SignUpPage/SignUpPage";
+import LoginPage2 from "./components/LoginPage2/LoginPage2";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/collections" element={<Collections />} />
         <Route path="/user-list" element={<UserList />} />
         <Route path="/sign-up" element={<SignUpPage />} />
+        <Route path="/login-page" element={<LoginPage2 />} />
       </Routes>
       <Footer />
     </div>
