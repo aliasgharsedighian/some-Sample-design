@@ -1,9 +1,18 @@
 import React from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { activity, changeActivity } from "../../slices/userActivitySlice";
 
 function Navbar() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const userActivity = useSelector(activity);
+
+  const loginLogoutBtn = {
+    //  userActivity ? "logout-button" : "login-button"
+  };
+
   return (
     <header className="navbar-container">
       <div className="navbar">
@@ -19,12 +28,16 @@ function Navbar() {
         </div>
         <div className="login-area">
           <button
+            className={userActivity ? "logout-button" : "login-button"}
             onClick={() => {
-              navigate("/login-page");
+              if (userActivity == false) {
+                navigate("/login-page");
+              } else {
+                dispatch(changeActivity(false));
+              }
             }}
-            className="login-button"
           >
-            Login
+            {userActivity ? "log out" : "log in"}
           </button>
           <button className="free-button">Start free trial</button>
         </div>

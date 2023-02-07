@@ -1,6 +1,6 @@
 .userList-section {
   background-color: #bfc8e6;
-  padding: 150px;
+  padding: 150px 0;
 }
 .usersList-container {
   background: linear-gradient(rgb(247, 247, 247), #fff);
@@ -77,7 +77,7 @@
 .usersList-area {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
 }
 .user-area {
   display: flex;
@@ -128,3 +128,38 @@
   border: 1px solid #516fd4;
   font-size: 10px;
 }
+
+/* media query */
+
+@media screen and (width < 740px) {
+  .usersList-area {
+    grid-template-columns: 1fr;
+  }
+  .search-link {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .link-area a {
+    padding: 6px;
+  }
+}
+
+@media screen and (740px<=width<1024px) {
+  .usersList-area {
+    grid-template-columns: 1fr 1fr;
+  }
+  .search-link {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+@media screen and (1024px<=width) {
+  .usersList-area {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .usersList-container {
+    width: 950px;
+  }
+} ;

@@ -42,6 +42,14 @@
   height: 30px;
   border-radius: 8px;
 }
+.login-area .logout-button {
+  background-color: #f44336;
+  margin-right: 10px;
+  width: 75px;
+  height: 33px;
+  border-radius: 8px;
+  color: #fff;
+}
 .login-area .free-button {
   background-color: #14203e;
   width: 110px;
@@ -53,7 +61,8 @@
   scale: 1.03;
   transition: 0.1s;
 }
-.login-button:active {
+.login-button:active,
+.logout-button:active {
   scale: 1.03;
   transition: 0.1s;
 }
@@ -62,7 +71,8 @@
     width: 126px;
     height: 35px;
   }
-  .login-area .login-button {
+  .login-area .login-button,
+  .logout-button {
     width: 78px;
     height: 35px;
   }

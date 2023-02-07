@@ -1,14 +1,19 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useRef, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { addedUser } from "../../slices/signUpslice";
 import "./LoginPage2.css";
+import { Link } from "react-router-dom";
+import { changeActivity } from "../../slices/userActivitySlice";
 
 function LoginPage2() {
   const users = useSelector(addedUser);
+  const dispatch = useDispatch();
+  const emailInput = useRef();
+  const passInput = useRef();
 
   const [username, setUsername] = useState("");
   const [passWord, setPassWord] = useState("");
-  const [accounts, setAccounts] = useState(users);
+  const [accounts] = useState(users);
 
   const userExist = (user, pass) => {
     for (const account of accounts) {
@@ -19,15 +24,28 @@ function LoginPage2() {
     return false;
   };
 
+  const changeUserActivity = (val) => {
+    dispatch(changeActivity(val));
+  };
+
+  const clearLoginInput = () => {
+    emailInput.current.value = null;
+    passInput.current.value = null;
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
-    if (userExist(username, passWord)) {
+    if (username === "") {
+      emailInput.current.focus();
+    } else if (passWord === "") {
+      passInput.current.focus();
+    } else if (userExist(username, passWord)) {
       alert(`Welcome ${username}, You Logged in successfully!`);
+      changeUserActivity(true);
     } else {
       alert("username or password must be wrong");
     }
-    setPassWord("");
-    setUsername("");
+    clearLoginInput();
   };
 
   return (
@@ -36,11 +54,13 @@ function LoginPage2() {
         <h2>Log in</h2>
         <form onSubmit={onSubmit} className="form-login-page">
           <input
+            ref={emailInput}
             type="text"
             placeholder="Enter email"
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
+            ref={passInput}
             type="text"
             placeholder="Enter Password"
             onChange={(e) => setPassWord(e.target.value)}
@@ -63,9 +83,9 @@ function LoginPage2() {
           </div>
         </div>
         <div className="info-login-page">
-          <a href="#">
+          <Link to="/sign-up">
             <p>can't log in? Already have an account?</p>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

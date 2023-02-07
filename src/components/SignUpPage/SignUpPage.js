@@ -16,13 +16,18 @@ function SignUpPage() {
   const [password, setPassword] = useState("");
   const [img, setImg] = useState("");
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   const addUser = (e) => {
     e.preventDefault();
     const user = {
-      firstname,
-      lastname,
-      city,
-      country,
+      id: Date.now().toString(),
+      firstname: capitalizeFirstLetter(firstname),
+      lastname: capitalizeFirstLetter(lastname),
+      city: capitalizeFirstLetter(city),
+      country: country.toUpperCase(),
       email,
       password,
       img,
