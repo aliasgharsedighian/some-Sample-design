@@ -9,7 +9,7 @@ export const UserListData = [
     detail: "Troy, MI",
     password: "123456",
     email: "lelah.nichols@mail.com",
-    fav: { fav1: "clothes", fav2: "stem" },
+    fav: ["clothes", "stem"],
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const UserListData = [
     detail: "Fort Worth, TX",
     password: "123456",
     email: "jesus.weiss@mail.com",
-    fav: { fav1: "headset", fav2: "gadget", fav3: "speed", fav4: "winter" },
+    fav: ["headset", "gadget", "speed", "winter"],
   },
   {
     id: 3,
@@ -33,13 +33,7 @@ export const UserListData = [
     detail: "Austin, TX",
     password: "123456",
     email: "annie.rice@mail.com",
-    fav: {
-      fav1: "road",
-      fav2: "mountain",
-      fav3: "trip",
-      fav4: "earth",
-      fav5: "nature",
-    },
+    fav: ["road", "mountain", "trip", "earth", "nature"],
   },
   {
     id: 4,
@@ -51,7 +45,7 @@ export const UserListData = [
     detail: "Cincinnati, OH",
     password: "123456",
     email: "robert.brower@mail.com",
-    fav: { fav1: "Maintenance", fav2: "gears", fav3: "frames", fav4: "repair" },
+    fav: ["Maintenance", "gears", "frames", "repair"],
   },
   {
     id: 5,
@@ -63,7 +57,7 @@ export const UserListData = [
     detail: "Warrior, AL",
     password: "123456",
     email: "amy.campbell@mail.com",
-    fav: { fav1: "music", fav2: "disks" },
+    fav: ["music", "disks"],
   },
   {
     id: 6,
@@ -75,6 +69,6 @@ export const UserListData = [
     detail: "Lyndhurst",
     password: "123456",
     email: "anthony.morin@mail.com",
-    fav: { fav1: "vintage", fav2: "electric" },
+    fav: ["vintage", "electric"],
   },
 ];

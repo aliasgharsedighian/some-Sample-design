@@ -9,10 +9,6 @@ function Navbar() {
   const navigate = useNavigate();
   const userActivity = useSelector(activity);
 
-  const loginLogoutBtn = {
-    //  userActivity ? "logout-button" : "login-button"
-  };
-
   return (
     <header className="navbar-container">
       <div className="navbar">

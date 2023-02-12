@@ -44,6 +44,7 @@
 .search-link {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .search-area {
   position: relative;
@@ -82,7 +83,7 @@
 .user-area {
   display: flex;
   background: linear-gradient(#fbfcff, rgb(241, 241, 241));
-  width: 261px;
+  width: 265px;
   height: 166px;
   padding: 18px;
   border-radius: 15px;
@@ -93,6 +94,9 @@
   scale: 1.01;
   transition: 0.2s ease-in-out;
   border: 1px solid #151b32;
+}
+.user-img {
+  display: contents;
 }
 .user-img img {
   width: 78px;
@@ -118,10 +122,15 @@
   font-size: 12px;
   font-weight: bold;
 }
+.user-fav {
+  display: grid;
+  justify-items: flex-start;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
 .user-fav span {
   color: #516fd4;
   background-color: #fff;
-  margin-right: 7px;
   cursor: pointer;
   border-radius: 10px;
   padding: 3px 5px;

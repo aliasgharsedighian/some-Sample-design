@@ -1,16 +1,20 @@
 import "./UserList.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserPlusIcon } from "@heroicons/react/20/solid";
 import { useSelector } from "react-redux";
 import { addedUser } from "../../slices/signUpslice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function UserList() {
   const users = useSelector(addedUser);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // const LOCAL_STORAGE_LIST_KEY = "users.list";
-  // users.JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || users;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(users);
+  }, []);
+
   return (
     <section className="userList-section">
       <div className="usersList-container">
@@ -43,26 +47,30 @@ function UserList() {
         </div>
         <div className="usersList-area">
           {users
-            .filter((val) => {
-              if (searchTerm == "") {
-                return val;
-              } else if (
-                val.firstname.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              } else if (
-                val.lastname.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              } else if (
-                val.city.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              }
-            })
+            // .filter((val) => {
+            //   if (searchTerm == "") {
+            //     return val;
+            //   } else if (
+            //     val.firstname.toLowerCase().includes(searchTerm.toLowerCase())
+            //   ) {
+            //     return val;
+            //   } else if (
+            //     val.lastname.toLowerCase().includes(searchTerm.toLowerCase())
+            //   ) {
+            //     return val;
+            //   } else if (
+            //     val.city.toLowerCase().includes(searchTerm.toLowerCase())
+            //   ) {
+            //     return val;
+            //   }
+            // })
             .map((user) => {
               return (
-                <div key={user.id} className="user-area">
+                <div
+                  key={user.id}
+                  onClick={() => navigate(`/user-list/${user.id}`)}
+                  className="user-area"
+                >
                   <div className="user-img">
                     <img src={user.img} alt="" />
                   </div>
@@ -76,8 +84,9 @@ function UserList() {
                       </p>
                     </div>
                     <div className="user-fav">
-                      <span>clothes</span>
-                      <span>stem</span>
+                      {user.fav.map((favorite) => (
+                        <span>{favorite}</span>
+                      ))}
                     </div>
                   </div>
                 </div>
