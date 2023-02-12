@@ -47,23 +47,23 @@ function UserList() {
         </div>
         <div className="usersList-area">
           {users
-            // .filter((val) => {
-            //   if (searchTerm == "") {
-            //     return val;
-            //   } else if (
-            //     val.firstname.toLowerCase().includes(searchTerm.toLowerCase())
-            //   ) {
-            //     return val;
-            //   } else if (
-            //     val.lastname.toLowerCase().includes(searchTerm.toLowerCase())
-            //   ) {
-            //     return val;
-            //   } else if (
-            //     val.city.toLowerCase().includes(searchTerm.toLowerCase())
-            //   ) {
-            //     return val;
-            //   }
-            // })
+            .filter((val) => {
+              if (searchTerm == "") {
+                return val;
+              } else if (
+                val.firstname.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              } else if (
+                val.lastname.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              } else if (
+                val.city.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
             .map((user) => {
               return (
                 <div
@@ -84,7 +84,7 @@ function UserList() {
                       </p>
                     </div>
                     <div className="user-fav">
-                      {user.fav.map((favorite) => (
+                      {user.fav?.map((favorite) => (
                         <span>{favorite}</span>
                       ))}
                     </div>
