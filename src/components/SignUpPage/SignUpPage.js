@@ -70,7 +70,7 @@ function SignUpPage() {
       setImg("http://localhost:3000/images/userList/no-img.png");
     } else if (ValidateEmail() === false) {
       alert("Invalid email address!");
-    } else if (password.length < 5) {
+    } else if (password.length < 6) {
       alert("password must be 6 or more");
       passwordInput.current.focus();
     } else {

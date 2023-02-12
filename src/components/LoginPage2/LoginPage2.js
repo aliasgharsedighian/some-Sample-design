@@ -42,21 +42,27 @@ function LoginPage2() {
     return false;
   }
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  function loginCondition() {
     if (username === "") {
       emailInput.current.focus();
     } else if (passWord === "") {
       passInput.current.focus();
+    } else if (passWord.length < 6) {
+      alert("Password must be 6 or more");
     } else if (userExist(username, passWord)) {
       alert(`Welcome ${username}, You Logged in successfully!`);
       changeUserActivity(true);
+      clearLoginInput();
     } else if (ValidateEmail() === false) {
       alert("Invalid email address!");
     } else {
       alert("username or password must be wrong");
     }
-    clearLoginInput();
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    loginCondition();
   };
 
   return (
