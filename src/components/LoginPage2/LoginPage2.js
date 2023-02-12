@@ -33,6 +33,15 @@ function LoginPage2() {
     passInput.current.value = null;
   };
 
+  function ValidateEmail() {
+    let validRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (username.match(validRegex)) {
+      return true;
+    }
+    return false;
+  }
+
   const onSubmit = (e) => {
     e.preventDefault();
     if (username === "") {
@@ -42,6 +51,8 @@ function LoginPage2() {
     } else if (userExist(username, passWord)) {
       alert(`Welcome ${username}, You Logged in successfully!`);
       changeUserActivity(true);
+    } else if (ValidateEmail() === false) {
+      alert("Invalid email address!");
     } else {
       alert("username or password must be wrong");
     }
