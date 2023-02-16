@@ -55,6 +55,10 @@
   width: 273px;
   height: 188px;
 }
+.large-img img {
+  width: 273px;
+  height: 190px;
+}
 .small-img {
   display: flex;
   justify-content: space-between;
@@ -64,9 +68,12 @@
   height: 68px;
 }
 .small-img img {
+  width: 84px;
+  height: 68px;
   display: flex;
   justify-content: space-between;
   margin-right: 9px;
+  border-radius: 18px;
 }
 .tag {
   display: flex;

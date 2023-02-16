@@ -1,13 +1,16 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addedUser } from "../../slices/signUpslice";
 import "./LoginPage2.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { changeActivity } from "../../slices/userActivitySlice";
+import { addUserAccount, userLogged } from "../../slices/userLogin";
 
 function LoginPage2() {
   const users = useSelector(addedUser);
+  const accountUser = useSelector(userLogged);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const emailInput = useRef();
   const passInput = useRef();
 
@@ -15,9 +18,14 @@ function LoginPage2() {
   const [passWord, setPassWord] = useState("");
   const [accounts] = useState(users);
 
+  useEffect(() => {
+    console.log(accountUser);
+  }, [accountUser]);
+
   const userExist = (user, pass) => {
     for (const account of accounts) {
       if (account.email == user && account.password == pass) {
+        dispatch(addUserAccount(account));
         return true;
       }
     }
@@ -53,6 +61,7 @@ function LoginPage2() {
       alert(`Welcome ${username}, You Logged in successfully!`);
       changeUserActivity(true);
       clearLoginInput();
+      navigate("/user-list");
     } else if (ValidateEmail() === false) {
       alert("Invalid email address!");
     } else {

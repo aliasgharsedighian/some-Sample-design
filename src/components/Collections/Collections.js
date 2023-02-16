@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Collections.css";
 import { CollectionsData } from "./CollectionsData";
 
 function Collections() {
+  const [selected, setSelected] = useState();
+
+  useEffect(() => {
+    setSelected(CollectionsData.map((u) => u.image1));
+  }, []);
+  console.log(selected);
+  function changeImg(input) {
+    setSelected(input);
+  }
   return (
     <section className="collections-container">
       <span className="circle-top"></span>

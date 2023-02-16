@@ -3,11 +3,13 @@ import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { activity, changeActivity } from "../../slices/userActivitySlice";
+import { userLogged } from "../../slices/userLogin";
 
 function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userActivity = useSelector(activity);
+  const userAccount = useSelector(userLogged);
 
   return (
     <header className="navbar-container">
@@ -35,7 +37,11 @@ function Navbar() {
           >
             {userActivity ? "log out" : "log in"}
           </button>
-          <button className="free-button">Start free trial</button>
+          {userActivity ? (
+            <span>{`Hello, ${userAccount.firstname}`}</span>
+          ) : (
+            <button className="free-button">Start free trial</button>
+          )}
         </div>
       </div>
     </header>

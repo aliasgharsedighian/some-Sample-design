@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { addToUser } from "../../slices/signUpslice";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { addUserAccount } from "../../slices/userLogin";
+import { changeActivity } from "../../slices/userActivitySlice";
 
 function SignUpPage() {
   const dispatch = useDispatch();
@@ -75,6 +77,8 @@ function SignUpPage() {
       passwordInput.current.focus();
     } else {
       dispatch(addToUser(user));
+      dispatch(addUserAccount(user));
+      dispatch(changeActivity(true));
       navigate("/user-list");
     }
   }

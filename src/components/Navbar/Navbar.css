@@ -66,6 +66,10 @@
   scale: 1.03;
   transition: 0.1s;
 }
+.login-area span {
+  font-size: 13px;
+  font-weight: 700;
+}
 @media (width > 576px) {
   .login-area .free-button {
     width: 126px;
