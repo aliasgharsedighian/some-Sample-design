@@ -101,12 +101,14 @@ function SignUpPage() {
                 <input
                   ref={firstnameInput}
                   type="text"
+                  value={firstname}
                   placeholder="First name"
                   onChange={(e) => setFirstName(e.target.value)}
                 />
                 <input
                   ref={lastnameInput}
                   type="text"
+                  value={lastname}
                   placeholder="Last name"
                   onChange={(e) => setLastName(e.target.value)}
                 />
@@ -115,12 +117,14 @@ function SignUpPage() {
                 <input
                   ref={cityInput}
                   type="text"
+                  value={city}
                   placeholder="City"
                   onChange={(e) => setCity(e.target.value)}
                 />
                 <input
                   ref={countryInput}
                   type="text"
+                  value={country}
                   placeholder="Country"
                   onChange={(e) => setCountry(e.target.value)}
                 />
@@ -129,12 +133,14 @@ function SignUpPage() {
                 <input
                   ref={emailInput}
                   type="text"
+                  value={email}
                   placeholder="Email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                   ref={passwordInput}
                   type="text"
+                  value={password}
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -146,7 +152,20 @@ function SignUpPage() {
                     console.log(e.target.files);
                   }}
                 />
-                <button onClick={addUser}>Create New Account</button>
+                <button
+                  className="disabled:bg-gray-600"
+                  disabled={
+                    !firstname ||
+                    !lastname ||
+                    !city ||
+                    !country ||
+                    !email ||
+                    !password
+                  }
+                  onClick={addUser}
+                >
+                  Create New Account
+                </button>
               </div>
             </form>
           </div>

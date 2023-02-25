@@ -4,12 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { activity, changeActivity } from "../../slices/userActivitySlice";
 import { userLogged } from "../../slices/userLogin";
+import { ShoppingCartIcon } from "@heroicons/react/20/solid";
+import { selectItems } from "../../slices/basketSlice";
 
 function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userActivity = useSelector(activity);
   const userAccount = useSelector(userLogged);
+  const items = useSelector(selectItems);
 
   return (
     <header className="navbar-container">
@@ -19,12 +22,26 @@ function Navbar() {
         </div>
         <div className="navbar-link-area">
           <Link to="/">Home</Link>
-          <a href="#">Articles</a>
+          <Link to="/Products">Products</Link>
           <a href="#">Pricing</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
         </div>
+        {/* <DarkModeButton /> */}
+
         <div className="login-area">
+          <div
+            onClick={() => navigate("/checkout")}
+            className="relative link flex items-center mr-5"
+          >
+            <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
+              {items.length}
+            </span>
+            <ShoppingCartIcon className="h-[35px]" />
+            <p className="hidden md:inline font-extrabold md:text-sm mt-2">
+              Basket
+            </p>
+          </div>
           <button
             className={userActivity ? "logout-button" : "login-button"}
             onClick={() => {

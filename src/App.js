@@ -11,13 +11,15 @@ import SignUpPage from "./components/SignUpPage/SignUpPage";
 import LoginPage2 from "./components/LoginPage2/LoginPage2";
 import SingleUserPage from "./components/UserList/SingleUserpage/SingleUserPage";
 import Test from "./components/Test/Test";
+import Products from "./components/Products/Products";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App bg-gray-50">
       <Navbar />
       <Routes>
         <Route path="/" element={<SampleDesign />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/search" element={<Search />} />
         <Route path="/carousel" element={<TopCarousel />} />
         <Route path="/login" element={<LoginPage />} />

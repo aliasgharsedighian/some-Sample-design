@@ -4,12 +4,17 @@ import { UserPlusIcon } from "@heroicons/react/20/solid";
 import { useSelector } from "react-redux";
 import { addedUser } from "../../slices/signUpslice";
 import { useEffect, useState } from "react";
+import { userCategories } from "../../constants";
 
 function UserList() {
   const users = useSelector(addedUser);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const pathname = window.location.pathname;
   const navigate = useNavigate();
+
+  const isActive = (path) => {
+    return pathname?.split("/").pop() === path;
+  };
 
   useEffect(() => {
     console.log(users);
@@ -37,11 +42,16 @@ function UserList() {
               />
             </div>
             <div className="link-area">
-              <a href="#">Reputation</a>
-              <a href="#">New users</a>
-              <a href="#">Voters</a>
-              <a href="#">Editors</a>
-              <a href="#">Moderators</a>
+              {userCategories.map((category) => {
+                return (
+                  <Link
+                    className={`user-link ${isActive(category) && "underline"}`}
+                    to={`/users/${category}`}
+                  >
+                    {category}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
