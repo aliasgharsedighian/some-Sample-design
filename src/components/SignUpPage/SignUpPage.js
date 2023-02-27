@@ -1,10 +1,12 @@
 import "./SignUpPage.css";
 import { useDispatch } from "react-redux";
-import { addToUser } from "../../slices/signUpslice";
+import {
+  addToUser,
+  changeActivity,
+  addUserLogged,
+} from "../../slices/userSlice";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { addUserAccount } from "../../slices/userLogin";
-import { changeActivity } from "../../slices/userActivitySlice";
 
 function SignUpPage() {
   const dispatch = useDispatch();
@@ -77,7 +79,7 @@ function SignUpPage() {
       passwordInput.current.focus();
     } else {
       dispatch(addToUser(user));
-      dispatch(addUserAccount(user));
+      dispatch(addUserLogged(user));
       dispatch(changeActivity(true));
       navigate("/user-list");
     }
@@ -139,7 +141,7 @@ function SignUpPage() {
                 />
                 <input
                   ref={passwordInput}
-                  type="text"
+                  type="password"
                   value={password}
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}

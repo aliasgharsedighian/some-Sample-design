@@ -2,8 +2,11 @@ import React from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { activity, changeActivity } from "../../slices/userActivitySlice";
-import { userLogged } from "../../slices/userLogin";
+import {
+  activity,
+  changeActivity,
+  userAccountLogged,
+} from "../../slices/userSlice";
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 import { selectItems } from "../../slices/basketSlice";
 
@@ -11,7 +14,7 @@ function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userActivity = useSelector(activity);
-  const userAccount = useSelector(userLogged);
+  const userAccount = useSelector(userAccountLogged);
   const items = useSelector(selectItems);
 
   return (

@@ -1,14 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addedUser } from "../../slices/signUpslice";
+import {
+  addedUser,
+  changeActivity,
+  addUserLogged,
+  userAccountLogged,
+} from "../../slices/userSlice";
 import "./LoginPage2.css";
 import { Link, useNavigate } from "react-router-dom";
-import { changeActivity } from "../../slices/userActivitySlice";
-import { addUserAccount, userLogged } from "../../slices/userLogin";
+// import { changeActivity } from "../../slices/userActivitySlice";
+// import { addUserAccount, userLogged } from "../../slices/userLogin";
 
 function LoginPage2() {
   const users = useSelector(addedUser);
-  const accountUser = useSelector(userLogged);
+  const accountUser = useSelector(userAccountLogged);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const emailInput = useRef();
@@ -17,15 +22,16 @@ function LoginPage2() {
   const [username, setUsername] = useState("");
   const [passWord, setPassWord] = useState("");
   const [accounts] = useState(users);
+  const [login, setLogin] = useState(false);
 
   useEffect(() => {
     console.log(accountUser);
-  }, [accountUser]);
+  }, [login]);
 
   const userExist = (user, pass) => {
     for (const account of accounts) {
       if (account.email == user && account.password == pass) {
-        dispatch(addUserAccount(account));
+        dispatch(addUserLogged(account));
         return true;
       }
     }
@@ -60,8 +66,9 @@ function LoginPage2() {
     } else if (userExist(username, passWord)) {
       alert(`Welcome ${username}, You Logged in successfully!`);
       changeUserActivity(true);
+      setLogin(true);
       clearLoginInput();
-      navigate("/user-list");
+      // navigate("/user-list");
     } else if (ValidateEmail() === false) {
       alert("Invalid email address!");
     } else {
@@ -87,7 +94,7 @@ function LoginPage2() {
           />
           <input
             ref={passInput}
-            type="text"
+            type="password"
             placeholder="Enter Password"
             onChange={(e) => setPassWord(e.target.value)}
           />

@@ -2,8 +2,8 @@ import "./UserList.css";
 import { Link, useNavigate } from "react-router-dom";
 import { UserPlusIcon } from "@heroicons/react/20/solid";
 import { useSelector } from "react-redux";
-import { addedUser } from "../../slices/signUpslice";
-import { useEffect, useState } from "react";
+import { addedUser } from "../../slices/userSlice";
+import { useState } from "react";
 import { userCategories } from "../../constants";
 
 function UserList() {
@@ -15,10 +15,6 @@ function UserList() {
   const isActive = (path) => {
     return pathname?.split("/").pop() === path;
   };
-
-  useEffect(() => {
-    console.log(users);
-  }, []);
 
   return (
     <section className="userList-section">
