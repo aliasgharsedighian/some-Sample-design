@@ -6,6 +6,7 @@ import {
   activity,
   changeActivity,
   userAccountLogged,
+  addUserLogged,
 } from "../../slices/userSlice";
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 import { selectItems } from "../../slices/basketSlice";
@@ -52,6 +53,7 @@ function Navbar() {
                 navigate("/login-page");
               } else {
                 dispatch(changeActivity(false));
+                dispatch(addUserLogged([]));
               }
             }}
           >

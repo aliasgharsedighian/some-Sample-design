@@ -1,14 +1,16 @@
 import "./SignUpPage.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addToUser,
   changeActivity,
   addUserLogged,
+  addedUser,
 } from "../../slices/userSlice";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function SignUpPage() {
+  const users = useSelector(addedUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -41,6 +43,14 @@ function SignUpPage() {
     email,
     password,
     img,
+  };
+
+  const userExist = (user) => {
+    for (const account of users) {
+      if (user === account.email) {
+        return false;
+      }
+    }
   };
 
   const addUser = (e) => {
@@ -77,6 +87,8 @@ function SignUpPage() {
     } else if (password.length < 6) {
       alert("password must be 6 or more");
       passwordInput.current.focus();
+    } else if (userExist(email) === false) {
+      alert("this email is taken");
     } else {
       dispatch(addToUser(user));
       dispatch(addUserLogged(user));

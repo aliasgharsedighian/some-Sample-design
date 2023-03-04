@@ -1,5 +1,19 @@
 export const SampleDesignData = [
   {
+    id: 7,
+    img: "http://localhost:3000/images/sample/profile.png",
+    title: "Profile Page , You must login for this page",
+    date: "March 3, 2023",
+    link: "/Profile/userId",
+  },
+  {
+    id: 6,
+    img: "http://localhost:3000/images/sample/Products.png",
+    title: "Products page, fetch data of API",
+    date: "February 15, 2023",
+    link: "/Products",
+  },
+  {
     id: 5,
     img: "http://localhost:3000/images/sample/login2.png",
     title: "Login page",

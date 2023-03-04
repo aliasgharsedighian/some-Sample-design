@@ -12,6 +12,7 @@ import LoginPage2 from "./components/LoginPage2/LoginPage2";
 import SingleUserPage from "./components/UserList/SingleUserpage/SingleUserPage";
 import Test from "./components/Test/Test";
 import Products from "./components/Products/Products";
+import UserProfile from "./components/UserProfilePage/UserProfile";
 
 const App = () => {
   return (
@@ -28,6 +29,8 @@ const App = () => {
         <Route path="/user-list/:userId" element={<SingleUserPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/login-page" element={<LoginPage2 />} />
+        <Route path="/profile" element />
+        <Route path="/profile/:userId" element={<UserProfile />} />
         <Route path="/test" element={<Test />} />
       </Routes>
       <Footer />

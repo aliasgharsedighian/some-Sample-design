@@ -3,14 +3,20 @@ import "./Collections.css";
 import { CollectionsData } from "./CollectionsData";
 
 function Collections() {
-  const [selected, setSelected] = useState();
+  const [images, setImages] = useState(CollectionsData);
+  const [selected, setSelected] = useState(images.map((u) => u.image1));
 
   useEffect(() => {
-    setSelected(CollectionsData.map((u) => u.image1));
+    setMainImg();
+    console.log();
   }, []);
-  console.log(selected);
+
+  const setMainImg = () => {};
+
+  function addMainImg() {}
+  console.log(images);
   function changeImg(input) {
-    setSelected(input);
+    // setSelected(input);
   }
   return (
     <section className="collections-container">
@@ -29,7 +35,7 @@ function Collections() {
           </div>
         </div>
         <div className="popular-image-container">
-          {CollectionsData.map((collect) => {
+          {images.map((collect) => {
             return (
               <div key={collect.id} className="popular-images">
                 <div className="img-area">
@@ -37,7 +43,11 @@ function Collections() {
                     <img src={collect.image1} alt="" />
                   </div>
                   <div className="small-img">
-                    <img src={collect.image2} alt="" />
+                    <img
+                      onClick={changeImg(collect.image2)}
+                      src={collect.image2}
+                      alt=""
+                    />
                     <img src={collect.image3} alt="" />
                     <img src={collect.image4} alt="" />
                   </div>

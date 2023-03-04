@@ -15,7 +15,6 @@ function LoginPage2() {
   const users = useSelector(addedUser);
   const accountUser = useSelector(userAccountLogged);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const emailInput = useRef();
   const passInput = useRef();
 
